@@ -1,9 +1,139 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Where do you think you are?</title>
-  </head>
+<head>
+  <title>Blog Layout Example</title>
+  <style>
+    /* Style the sidebar */
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    /* Style the sidebar links */
+    .sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #D7BFDC;
+      display: block;
+      transition: 0.3s;
+    }
+
+    /* Change color on hover */
+    .sidebar a:hover {
+      color: #f1f1f1;
+    }
+
+    /* Style the content */
+    .content {
+      margin-left: 200px;
+      padding-left: 20px;
+    }
+
+    /* Style the hamburger menu */
+    .hamburger {
+      position: fixed;
+      z-index: 1;
+      top: 20px;
+      left: 20px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    /* Style the blog post */
+    .post {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 20px;
+    }
+
+    /* Style the blog post title */
+    .post h2 {
+      margin-top: 0;
+    }
+
+    /* Style the blog post date */
+    .post .date {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    /* Style the blog post content */
+    .post p {
+      margin-top: 10px;
+    }
+
+    /* Media queries */
+    @media screen and (max-width: 600px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+      .sidebar a {
+        float: left;
+      }
+      .content {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
 <body>
-  You're in the interdimensional rift now. The only way to go back to your home is through that storm in front of you, consuming all matter in the galaxy... (its not a white screen)
+
+  <!-- The sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <!-- The hamburger menu -->
+  <div class="hamburger" id="the_hamburger" onclick="openSidebar()">
+    =
+  </div>
+
+  <!-- The content -->
+  <div class="content">
+    <div class="post">
+      <h2>Blog Post Title</h2>
+      <div class="date">January 1, 2024</div>
+      <p>Blog post content goes here...</p>
+    </div>
+    <div class="post">
+      <h2>Blog Post Title</h2>
+      <div class="date">January 1, 2024</div>
+      <p>Blog post content goes here...</p>
+    </div>
+    <div class="post">
+      <h2>Blog Post Title</h2>
+      <div class="date">January 1, 2024</div>
+      <p>Blog post content goes here...</p>
+    </div>
+  </div>
+
+  <script>
+    function openSidebar() {
+      var t = document.getElementById("sidebar").style.width;
+      if (t==="0px") {
+        document.getElementById("sidebar").style.width = "200px";
+        document.getElementById("the_hamburger").style.color = "#D7BFDC";
+      }
+      else {
+        document.getElementById("sidebar").style.width = "0px";
+        document.getElementById("the_hamburger").style.color = "#311432";
+      }
+    }
+    
+  </script>
+
 </body>
 </html>
