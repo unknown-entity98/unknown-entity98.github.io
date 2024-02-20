@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="page-bg">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SamIsUnreal</title>
   <style>
     /* Style the sidebar */
@@ -15,7 +16,7 @@
       background-color: #111;
       overflow-x: hidden;
       transition: 0.5s;
-	  color:#E6E6FA;
+	  color:#D7BFDC;
       padding-top: 60px;
     }
 
@@ -37,9 +38,9 @@
 
     /* Style the content */
     .content {
-      margin-left: 200px;
-      padding-left: 20px;
-    }
+      margin-left: 170px;
+	  margin-right:0px;
+      }
 
     /*the page title that says palace of dreams*/
     .pagetitle{
@@ -49,18 +50,14 @@
       margin-right:100px;
       color: #ffffff;
       background: linear-gradient(90deg,#9a8478,#1e130c);
-      font-family: "Georgia",serif;
+      font-family: "Monaco",monospace;
       font-size: 29px;
     }
     
 	.page-bg{
 	  background-image:linear-gradient(90deg,#e6dada,#274046);
-	  height: 100%;
-	  background-position: center;
-	  background-repeat: no-repeat;
-	  background-size:cover;
-	  margin-left:200px;
-	  margin-right:200px;
+	  margin-left:210px;
+	  margin-right:90px;
 	}
 
     /* Style the hamburger menu */
@@ -75,11 +72,10 @@
 
     /* Style the blog post */
     .post {
-      margin-bottom: 20px;
+	  margin-bottom: 20px;
       border-bottom: 1px solid #ddd;
       padding-bottom: 20px;
-      font-family: "Monaco",monospace;
-    }
+	}
 
     /* Style the blog post title */
     .post h2 {
@@ -88,24 +84,17 @@
 
     /* Style the blog post date */
     .post .date {
-      color: #aaa;
+      color: #8b0000;
       font-size: 14px;
     }
 
     /* Style the blog post content */
     .post p {
       margin-top: 10px;
+      color: #8B4513;
+      width: 90%; 
     }
-     a:link{
-	color : black;
-     }
-     a: visited {
-	color : black;
-     }
-     a: hover {
-	color: #2a7ae2;
-     }
-	  
+
     /* Media queries */
     @media screen and (max-width: 600px) {
       .sidebar {
@@ -123,14 +112,13 @@
   </style>
 </head>
 <body>
-<div class="page-bg">
   <div class = "pagetitle">
 	  <h1>Unknown-Entity's Blog</h1>
   </div>
 
   <!-- The sidebar -->
   <div class="sidebar" id="sidebar">
-    <a href="#">Home</a>
+    <a href="https://unknown-entiy98.github.io/">Home</a>
     <a href="#">About</a>
     <a href="#">Contact</a>
   </div>
@@ -139,10 +127,9 @@
   
   <div class="content">
     <div class="post">
-      <h2><a href= "https://alert-flute-46d.notion.site/The-Idea-of-Open-Source-L2P1-76131e3a7be140ed9b14e7919a76a2ce?pvs=4">The Idea of Open Source</a></h2>
+      <h2>The Idea of Open Source</h2>
       <div class="date">January 5, 2024</div>
-      <p>Its a popular word, but what does it really mean? Is Open Source just about anything that is publicly available?
-	      What about the authors? What about their intention for the project? Is their permission required?</p>
+      <p>Is it necessary to check the license? I've always thought we didn't have to check the license but it turns out I've been wrong! Did you make the same mistake as me?</p>
     </div>
     <div class="post">
       <h2>Blog Post Title</h2>
@@ -170,6 +157,7 @@
     }
     
   </script>
-</div>
+
 </body>
+</div>
 </html>
