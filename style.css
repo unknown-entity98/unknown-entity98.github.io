@@ -145,3 +145,85 @@ color: black;
   box-sizing:border-box;
     }
   }
+
+
+/* General mobile styles */
+@media screen and (max-width: 768px) {
+    /* Adjust sidebar for mobile */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        background-color: #111; /* Keep the dark background */
+        padding-top: 20px; /* Reduce padding */
+    }
+    .sidebar a {
+        font-size: 18px; /* Slightly smaller font size for links */
+        padding: 10px; /* Adjust padding for better spacing */
+        text-align: center; /* Center-align links */
+        display: block;
+        float: none; /* Ensure links are stacked vertically */
+    }
+
+    /* Content adjustment */
+    .content {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 20px; /* Add padding around the content */
+        box-sizing: border-box;
+    }
+
+    /* Adjust pagetitle for mobile */
+    .pagetitle {
+        margin: 20px;
+        font-size: 24px; /* Adjust font size for readability */
+        padding: 10px;
+        text-align: center; /* Center title on small screens */
+    }
+
+    /* Post styling */
+    .post {
+        width: 90%; /* Use a wider width for better content fit */
+        margin-left: 5%;
+        margin-right: 5%;
+        padding: 15px;
+        font-size: 16px; /* Adjust font size for readability */
+    }
+
+    /* Adjust post title for mobile */
+    .post h2 {
+        font-size: 22px; /* Slightly smaller title font */
+        padding-left: 0; /* Remove padding */
+        text-align: center; /* Center-align title */
+    }
+
+    /* Post date and content adjustments */
+    .post .date, .post p {
+        padding-left: 0; /* Remove left padding */
+        padding-right: 0; /* Remove right padding */
+        text-align: center; /* Center-align text */
+    }
+
+    /* Adjust image */
+    .post img {
+        width: 100%; /* Full width image */
+        height: auto; /* Maintain aspect ratio */
+        display: block;
+        margin: 10px auto; /* Center image */
+    }
+}
+
+/* More specific adjustments for very small screens */
+@media screen and (max-width: 480px) {
+    .sidebar a {
+        font-size: 16px;
+    }
+
+    .pagetitle {
+        font-size: 20px;
+    }
+
+    .post h2 {
+        font-size: 20px;
+    }
+}
