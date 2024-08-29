@@ -31,14 +31,15 @@ color: rgb(96, 211, 231);
     text-decoration: none;
     font-size: 24px;
     font-family:"Times New Roman",serif;
-    color: #D7BFDC;
     display: block;
     transition: 0.3s;
+    border-color: aliceblue;
+    color: #5488e8;
   }
 
   /* Change color on hover */
   .sidebar a:hover {
-    color: #f1f1f1;
+    color: #ff764d;
   }
 
   /* Style the content */
@@ -51,19 +52,27 @@ color: rgb(96, 211, 231);
   .pagetitle{
     border-color: whitesmoke;
     text-align:center;
-    margin-left:2%;
-    margin-right:2%;
+    margin-left:30%;
+    margin-right:30%;
     color: #ffffff;
     background: linear-gradient(90deg,#9a8478,#1e130c);
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 29px;
   }
-  
+  .pagetitle h1:hover{
+    color:plum;
+    transition: color 1s;
+  }
   .page-bg{
-    height:100lvh;
-    background-image:linear-gradient(90deg,#e6dada,#274046);
+    height:100%;
+    /*background-image:linear-gradient(90deg,#e6dada,#274046);*/
+    background: rgb(35, 34, 37);
+    color: antiquewhite;
     /*margin-left:10%;*/
     /*margin-right:90px;*/
+  }
+  .page-bg{
+    height:100%;
   }
 
   /* Style the hamburger menu */
@@ -85,10 +94,18 @@ color: rgb(96, 211, 231);
     padding-bottom: 30px;   
     width:60%;
     text-align: justify;
+    background-color: #9a8478;
   }
   .post:hover {
-    background-color: #9a8478;
-    transition: background-color 0.3s ease;
+    transform:translate(0,0px);
+    border-radius: 1%;
+    transition:border-radius 0.2s;
+    border-color: #5488e8;;
+    margin-left: 27%;
+    margin-right: 7%;
+    padding-bottom: 10px;
+    width:45%;
+    padding-bottom: 20px;
 }
 
   /* Style the blog post title */
@@ -124,7 +141,7 @@ color: rgb(96, 211, 231);
     /*padding-left: 50px;
     padding-right: 50px;*/
   }
-
+ 
   /* Media queries */
   @media screen and (max-width: 600px) {
     .sidebar {
