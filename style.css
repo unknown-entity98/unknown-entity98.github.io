@@ -40,12 +40,19 @@ color: rgb(96, 211, 231);
   /* Change color on hover */
   .sidebar a:hover {
     color: #ff764d;
+    font-family: 'Courier New', Courier, monospace;
   }
 
   /* Style the content */
   .content {
     margin-left: 0%;
     margin-right:0px;
+    }
+
+    .form-check label{
+      font-weight: bold;
+      border-radius: 10px; /* Rounded corners */
+      border: 2px solid #00996b; /* Customize border */
     }
 
   /*the page title that says My Blog*/
@@ -60,8 +67,10 @@ color: rgb(96, 211, 231);
     font-size: 29px;
   }
   .pagetitle h1:hover{
-    color:plum;
-    transition: color 1s;
+    text-shadow:rgb(160, 221, 221) 0 0 70px 10px;
+    text-decoration:dotted;
+
+    transition: text-shadow 0.4s;
   }
   .page-bg{
     height:100%;
@@ -99,13 +108,16 @@ color: rgb(96, 211, 231);
   .post:hover {
     transform:translate(0,0px);
     border-radius: 1%;
-    transition:border-radius 0.2s;
-    border-color: #5488e8;;
+    /*border-color: #5488e8;*/
+    
+    box-shadow: #ff764d 0 0 80px 10px;
+    transition:box-shadow 0.1s;
     margin-left: 27%;
     margin-right: 7%;
     padding-bottom: 10px;
     width:45%;
     padding-bottom: 20px;
+    background-color: #e4c7ac;
 }
 
   /* Style the blog post title */
@@ -138,10 +150,12 @@ color: rgb(96, 211, 231);
     font-weight:bold;
     width: 80%; 
     font-family: "Monaco",monospace;
-    /*padding-left: 50px;
+    color:blanchedalmond
+    /*color: #1636a0;
+    padding-left: 50px;
     padding-right: 50px;*/
   }
- 
+
   /* Media queries */
   @media screen and (max-width: 600px) {
     .sidebar {
