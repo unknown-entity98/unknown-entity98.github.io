@@ -128,12 +128,14 @@ color: rgb(96, 211, 231);
   }
 
   .page-content{
-    text-align: justify;
+  text-align: justify;
   margin-left:30%;
-  font-size:20px;
+  line-height: 30px;
+  font-size:18px;
   padding-bottom: 25px;   
   width:60%;
-  font-family:monospace;}
+  font-family:monospace;
+  }
 
   .quote{
     text-align: justify;
