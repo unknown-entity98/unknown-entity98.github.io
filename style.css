@@ -1,0 +1,309 @@
+.sidebar {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    color:#D7BFDC;
+    padding-top: 2%;
+  }
+
+a:link {
+color: black;
+}
+
+/* visited link */
+a:visited {
+color: black;
+}
+
+/* mouse over link */
+a:hover {
+color: rgb(96, 211, 231);
+}
+
+  /* Style the sidebar links */
+  .sidebar a {
+    padding: 5% 15% 2%;/*before left after*/
+    text-decoration: none;
+    font-size: 24px;
+    font-family:"Times New Roman",serif;
+    display: block;
+    transition: 0.3s;
+    border-color: aliceblue;
+    color: #5488e8;
+  }
+
+  /* Change color on hover */
+  .sidebar a:hover {
+    color: #ff764d;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  /* Style the content */
+  .content {
+    margin-left: 0%;
+    margin-right:0px;
+    }
+
+    .form-check label{
+      font-weight: bold;
+      border-radius: 10px; /* Rounded corners */
+      border: 2px solid #00996b; /* Customize border */
+    }
+
+  /*the page title that says My Blog*/
+  .pagetitle{
+    border-color: whitesmoke;
+    text-align:center;
+    margin-left:30%;
+    margin-right:30%;
+    color: #ffffff;
+    background: linear-gradient(90deg,#9a8478,#1e130c);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 29px;
+  }
+  .pagetitle h1:hover{
+    text-shadow:rgb(160, 221, 221) 0 0 70px 10px;
+    text-decoration:dotted;
+
+    transition: text-shadow 0.4s;
+  }
+  .page-bg{
+    height:100%;
+    /*background-image:linear-gradient(90deg,#e6dada,#274046);*/
+    background: rgb(35, 34, 37);
+    color: antiquewhite;
+    /*margin-left:10%;*/
+    /*margin-right:90px;*/
+  }
+  .page-bg{
+    height:100%;
+  }
+
+  /* Style the hamburger menu */
+  .hamburger {
+    position: fixed;
+    z-index: 1;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  /* Style the blog post */
+  .post {
+    border-style:groove;
+    border-color: #1e130c;
+    margin-bottom: 4%;
+    margin-left:20%;
+    padding-bottom: 30px;   
+    width:60%;
+    text-align: justify;
+    background-color: #9a8478;
+  }
+  .post:hover {
+    transform:translate(0,0px);
+    border-radius: 1%;
+    /*border-color: #5488e8;*/
+    
+    box-shadow: #ff764d 0 0 80px 10px;
+    transition:box-shadow 0.1s;
+    margin-left: 27%;
+    margin-right: 7%;
+    padding-bottom: 10px;
+    width:45%;
+    padding-bottom: 20px;
+    background-color: #e4c7ac;
+}
+
+  /* Style the blog post title */
+  .post h2 {
+    margin-top: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-left:4%;
+  }
+
+  .page-content{
+  text-align: justify;
+  margin-left:30%;
+  line-height: 30px;
+  font-size:18px;
+  padding-bottom: 25px;   
+  width:60%;
+  font-family:monospace;
+  }
+
+  .quote{
+    text-align: justify;
+    margin-left:30%;
+    font-size:24px;
+    padding-bottom: 25px;   
+    width:60%;
+    font-style: italic;
+    text-shadow:#ff764d;
+    border-width: 2cap;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  @keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 
+                     0 0 20px #fff, 
+                     0 0 30px #ff764d, 
+                     0 0 40px #ff764d, 
+                     0 0 50px #ff764d, 
+                     0 0 60px #ff764d, 
+                     0 0 70px #ff764d;
+    }
+    
+    to {
+        text-shadow: 0 0 20px #fff, 
+                     0 0 30px #ff764d, 
+                     0 0 40px #ff764d, 
+                     0 0 50px #ff764d, 
+                     0 0 60px #ff764d, 
+                     0 0 70px #ff764d, 
+                     0 0 80px #ff764d;
+    }
+}
+
+
+  .heading{
+  margin-left: 30%;
+  font-size:26px;
+  padding-bottom: 26px;
+  font-family:monospace;
+  width:60%;
+  }
+
+  .post .why{
+    padding-top: 1%;
+    padding-bottom: 2%;
+    display:block;
+    margin: 0 auto;
+  }
+  /* Style the blog post date */
+  .post .date {
+    color: #8b1c00;
+    font-size: 14px;
+    padding-left:50px;
+    font-weight: bold;
+  }
+
+
+  /* Style the blog post content */
+  .post p {
+    display: block;
+    margin:0 auto;
+    margin-top: 1.5%;
+    color: white;
+    font-weight:bold;
+    width: 80%; 
+    font-family: "Monaco",monospace;
+    color:blanchedalmond
+    /*color: #1636a0;
+    padding-left: 50px;
+    padding-right: 50px;*/
+  }
+
+  /* Media queries */
+  @media screen and (max-width: 600px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {
+      float: left;
+    }
+    .content {
+      margin-left: 0;
+  box-sizing:border-box;
+    }
+  }
+
+
+  /* General mobile styles */
+@media screen and (max-width: 768px) {
+    /* Adjust sidebar for mobile */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        background-color: #111; /* Keep the dark background */
+        padding-top: 20px; /* Reduce padding */
+    }
+    .sidebar a {
+        font-size: 18px; /* Slightly smaller font size for links */
+        padding: 10px; /* Adjust padding for better spacing */
+        text-align: center; /* Center-align links */
+        display: block;
+        float: none; /* Ensure links are stacked vertically */
+    }
+
+    /* Content adjustment */
+    .content {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 20px; /* Add padding around the content */
+        box-sizing: border-box;
+    }
+
+    /* Adjust pagetitle for mobile */
+    .pagetitle {
+        margin: 20px;
+        font-size: 24px; /* Adjust font size for readability */
+        padding: 10px;
+        text-align: center; /* Center title on small screens */
+    }
+
+    /* Post styling */
+    .post {
+        width: 90%; /* Use a wider width for better content fit */
+        margin-left: 5%;
+        margin-right: 5%;
+        padding: 15px;
+        font-size: 16px; /* Adjust font size for readability */
+    }
+
+    /* Adjust post title for mobile */
+    .post h2 {
+        font-size: 22px; /* Slightly smaller title font */
+        padding-left: 0; /* Remove padding */
+        text-align: center; /* Center-align title */
+    }
+
+    /* Post date and content adjustments */
+    .post .date, .post p {
+        padding-left: 0; /* Remove left padding */
+        padding-right: 0; /* Remove right padding */
+        text-align: center; /* Center-align text */
+    }
+
+    /* Adjust image */
+    .post img {
+        width: 100%; /* Full width image */
+        height: auto; /* Maintain aspect ratio */
+        display: block;
+        margin: 10px auto; /* Center image */
+    }
+}
+
+/* More specific adjustments for very small screens */
+@media screen and (max-width: 480px) {
+    .sidebar a {
+        font-size: 16px;
+    }
+
+    .pagetitle {
+        font-size: 20px;
+    }
+
+    .post h2 {
+        font-size: 20px;
+    }
+}
