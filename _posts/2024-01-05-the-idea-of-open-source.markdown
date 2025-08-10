@@ -19,7 +19,7 @@ Originally, Unix was non-portable and a convenient platform for programmers. It 
 People modified these systems, invented their own tools for research purposes, and shared them with their colleagues. This opened their imagination to the possibility of modifying and designing their machines.
 
 As Steve Jobs said:
-> "Great things in business are never done by one person; they’re done by a team of people."
+> Great things in business are never done by one person; they’re done by a team of people.
 
 A community is what sustains development. The presence and support of open-minded enthusiasts who devote their time and knowledge is one of the pillars of the Open Source software movement.
 
