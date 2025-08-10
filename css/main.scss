@@ -15,3 +15,89 @@ $cloudy: #828282;
     "default",
     "404"
 ;
+
+
+
+
+/*################*/
+/* Adding dark Mode styles for the body and main content */
+body.dark-mode {
+  background-color: #1a1a1a; /* A dark gray for the background */
+  color: #e0e0e0; /* A light gray for the text */
+}
+
+/* Dark Mode styles for links and their states */
+body.dark-mode a {
+  color: #bb86fc; /* A vibrant color for links */
+}
+
+body.dark-mode a:hover {
+  color: #3700b3; /* A darker shade on hover */
+}
+
+/* Dark Mode styles for the site header and navigation */
+body.dark-mode .site-header {
+  background-color: #2c2c2c;
+  border-bottom: 1px solid #4a4a4a;
+}
+
+body.dark-mode .site-title a {
+  color: #ffffff;
+}
+
+body.dark-mode .site-nav-item {
+  color: #e0e0e0;
+}
+
+/* Dark Mode styles for posts and their elements */
+body.dark-mode .post {
+  background-color: #2c2c2c;
+  border: 1px solid #4a4a4a;
+  color: #e0e0e0;
+}
+
+body.dark-mode .post-teaser__title {
+  color: #bb86fc; /* Use the same color as the links for consistency */
+}
+
+body.dark-mode .post-teaser__date {
+  color: #b0b0b0; /* A slightly muted color for dates */
+}
+
+body.dark-mode .post h1,
+body.dark-mode .post h2,
+body.dark-mode .post h3,
+body.dark-mode .post h4,
+body.dark-mode .post h5,
+body.dark-mode .post h6 {
+  color: #ffffff;
+}
+
+/* Dark Mode styles for blockquotes */
+body.dark-mode blockquote {
+  border-left: 5px solid #bb86fc;
+  color: #b0b0b0;
+  background-color: #222222;
+}
+
+/* Dark Mode styles for code blocks */
+body.dark-mode pre,
+body.dark-mode code {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #4a4a4a;
+}
+
+/* Dark Mode styles for tables */
+body.dark-mode table {
+  color: #e0e0e0;
+  border: 1px solid #4a4a4a;
+}
+
+body.dark-mode th {
+  background-color: #2c2c2c;
+}
+
+body.dark-mode td {
+  border-top: 1px solid #4a4a4a;
+}
