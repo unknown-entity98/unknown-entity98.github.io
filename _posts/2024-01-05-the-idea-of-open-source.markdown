@@ -6,7 +6,7 @@ tags: [open-source, software-engineering, career]
 category: productivity
 ---
 
-![A description of the picture](/assets/open_source_logo.jpg)
+![The Open Source logo](./assets/open_source_logo.jpg)
 
 Every day we run systems on servers and the cloud, which depend on base systems, CPUs, and GPUs that run tirelessly. Have you ever wondered how these base systems came into existence? It all started with the first portable operating system, **Unix**.
 
