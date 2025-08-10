@@ -1,2 +1,26 @@
 <script src="{{ "/assets/vendor/highlight/highlight.pack.js" | prepend: site.baseurl }}"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+  const toggleButton = document.getElementById('dark-mode-toggle');
+  const body = document.body;
+  const currentMode = localStorage.getItem('theme');
+
+  // Apply the saved theme on page load
+  if (currentMode) {
+    body.classList.add(currentMode);
+  }
+
+  // Add a click event listener to the toggle button
+  toggleButton.addEventListener('click', () => {
+    // Toggle the dark-mode class on the body
+    body.classList.toggle('dark-mode');
+
+    // Save the new theme preference to localStorage
+    if (body.classList.contains('dark-mode')) {
+      localStorage.setItem('theme', 'dark-mode');
+    } else {
+      localStorage.removeItem('theme');
+    }
+  });
+</script>
