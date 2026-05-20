@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "The Idea of Open Source"
+title: "The Currency of LLMs"
 author: Sameer Navuduri
-tags: [open-source, software-engineering, career]
+tags: [software-engineering, AI]
 category: productivity
 ---
 
