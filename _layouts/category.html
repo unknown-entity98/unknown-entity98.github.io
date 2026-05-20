@@ -11,6 +11,7 @@ layout: default
                 <a href="{{ post.url | prepend: site.baseurl }}">
                     <span class="post-teaser__title">{{ post.title }}</span>
                     <span class="post-teaser__date">{{ post.date | date: "%d %B %Y" }}</span>
+                    {% if post.blurb %}<span class="post-teaser__blurb">{{ post.blurb }}</span>{% endif %}
                 </a>
             </li>
             {% assign empty_category = false %}

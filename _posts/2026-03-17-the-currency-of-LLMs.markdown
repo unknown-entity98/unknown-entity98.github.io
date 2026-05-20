@@ -4,6 +4,7 @@ title: "The Currency of LLMs"
 author: Sameer Navuduri
 tags: [AI, LLMs, tokenization]
 category: productivity
+blurb: 'Or: why your chatbot just charged you $0.003 to say "As an AI language model, I cannot browse the internet."'
 ---
 
 *Or: why your chatbot just charged you $0.003 to say "As an AI language model, I cannot browse the internet."*

@@ -4,6 +4,7 @@ title: "The Idea of Open Source"
 author: Sameer Navuduri
 tags: [open-source, software-engineering, career]
 category: productivity
+blurb: '"Free as in freedom" and "free as in free pizza" are very different things — and one requires a lot more GitHub PRs.'
 ---
 
 *Wherein we learn that "free as in freedom" and "free as in free pizza" are very different things — and one of them requires a lot more GitHub PRs.*

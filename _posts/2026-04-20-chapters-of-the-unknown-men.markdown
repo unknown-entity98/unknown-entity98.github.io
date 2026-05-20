@@ -4,6 +4,7 @@ title: "Chapters of the Unknown Men"
 author: Sameer Navuduri
 tags: [film-review, cinema, dhurandhar]
 category: journalism
+blurb: 'A review of a spy thriller. No spoilers. Mostly.'
 ---
 
 *A review of a spy thriller. No spoilers. Mostly.*

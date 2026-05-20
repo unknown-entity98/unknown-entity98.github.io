@@ -171,6 +171,15 @@ strong {
     color: $cloudy;
 }
 
+.post-teaser__blurb {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: italic;
+    color: $cloudy;
+    margin-top: 6px;
+}
+
 .empty-post-list {
     font-size: 22px;
     font-weight: 700;
@@ -289,6 +298,10 @@ strong {
         margin-top: 10px;
         float: none;
         @include centered-block();
+    }
+
+    .post-teaser__blurb {
+        text-align: center;
     }
 
     .explore {
