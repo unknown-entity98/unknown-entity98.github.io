@@ -2,59 +2,115 @@
 layout: post
 title: "The Currency of LLMs"
 author: Sameer Navuduri
-tags: [software-engineering, AI]
+tags: [AI, LLMs, tokenization]
 category: productivity
 ---
 
-![Logo of the Open Source Initiative](/assets/images/open_souce_logo.jpg)
+*Or: why your chatbot just charged you $0.003 to say "As an AI language model, I cannot browse the internet."*
 
-Logo courtesy: [https://opensource.org/](https://opensource.org/)
-
-Every day we run systems on servers and the cloud, which depend on base systems, CPUs, and GPUs that run tirelessly. Have you ever wondered how these base systems came into existence? It all started with the first portable operating system, **Unix**.
-
-You hear about Unix everywhere. If you open a Wikipedia page on Linux, you'll find it's "Unix-based." If you read about Apple's MacOS, you'll see that "its core parts include a Unix system."
-
-Originally, Unix was non-portable and a convenient platform for programmers. It was never meant for non-programmers. However, as more end-users added their own tools and shared them in academic circles, Unix gained immense popularity. It was after this that Unix was made more user-friendly.
-
-People modified these systems, invented their own tools for research purposes, and shared them with their colleagues. This opened their imagination to the possibility of modifying and designing their machines.
-
-As Steve Jobs said:
-> Great things in business are never done by one person; they’re done by a team of people.
-
-A community is what sustains development. The presence and support of open-minded enthusiasts who devote their time and knowledge is one of the pillars of the Open Source software movement.
+Every time you ask an LLM something, a little meter is ticking. Not seconds — **tokens**. They're the unit of currency every major AI provider charges in, and once you understand what they are, the pricing pages start making a lot more sense. Spoiler: output is always more expensive, and there's a reason for that.
 
 ---
 
-## Advantages of Open Source
+## What even is a token?
 
-One of the core definitions of open-source software is the freedom to study, run, edit, and redistribute the source code. This inspires developers to create their own software and share their knowledge. The Open Source Initiative was inspired by the open sourcing of Netscape Navigator, which later led to the creation of the Firefox browser.
+LLMs don't read your text. They read numbers. Before any "thinking" happens, your message gets broken down into small chunks called tokens — and each token maps to a number the model actually processes.
 
-Here are three things that open source does well:
+```
+  You type:  "Tokenization is surprisingly interesting."
 
-* **Transparency**
-    When you open-source a project, you encourage transparency, which is essential for any organization. Mozilla's reputation increased greatly after they open-sourced their products, which is why you'll find Firefox in any Linux distro you pick.
+  Becomes:   ["Token", "ization", " is", " surprisingly", " interesting", "."]
 
-* **Reduced costs and Improved Quality**
-    Take Google Chrome as an example. By not having to pay large internal teams for development, they were able to focus their resources on specific areas. Developers from various backgrounds inspected the code, which allowed them to identify vulnerabilities and fix patches quickly. Open-sourcing their products allowed a huge community to work on and implement various plugins, themes, and features, making the products highly scalable and adaptable.
+  As IDs:    [  9220,     2065,    374,        vaguely,        large,      13 ]
+```
 
-* **Attracting and Retaining Talent**
-    Linux is the open-source project with the biggest community in the world, and their greatest supporter is Red Hat. They foster a heavy sense of community and invest significant resources in employee training and development. Red Hat encourages remote work and offers competitive pay. They care about their employees, who work on projects that affect millions of lives. Other organizations that support open-source projects include Google (Android OSP), AWS, IBM, JetBrains, Docker, and NASA.
+Tokens aren't exactly words. Common words like "is" or "the" are usually one token. Long or rare words get split — "tokenization" becomes two pieces. As a rough rule of thumb: **1 token ≈ 4 characters**, or about 0.75 words in English. That 5,000-word essay you're submitting? Roughly 6,700 tokens.
+
+```
+  "Hello"          → 1 token
+  "extraordinary"  → 1 token   (common enough)
+  "pneumonoultram  → 6 tokens  (nobody uses this anyway)
+   icroscopicsilico
+   volcanoconiosis"
+```
+
+Different models use different tokenizers, so token counts vary slightly across providers. Fun.
 
 ---
 
-## If you really intend to set foot into the river of Open Source:
+## How the model uses them
 
-* **Learn to Google effectively.**
-    This is an underrated skill. It's important to know how to search effectively to find the answers you need.
+At a high level, the flow looks like this:
 
-* **Read and interpret licenses carefully.**
-    Many times, for our term projects, students use `git clone` and present code without a license. Copying code without a license is liable to legal action. Unless the creator provides a license that gives you the right to modify and redistribute it, you shouldn't do it. If you do, at least clarify your intentions and acknowledge the creators in your license or `README` file.
+```
+  [ Your message ]
+        ↓  tokenize
+  [ Token IDs: 1337, 42, 890, ... ]
+        ↓  model processes entire sequence
+  [ Predicts next token ID ]
+        ↓  repeat until done
+  [ Detokenize back to text ]
+  [ "Here is your answer:" ]
+```
 
-* **Start out small.**
-    Build libraries in a language of your choice and think about the practicality of your creation. How will this make a developer's work simpler? How can they install and integrate it into their projects? Will it cause any dependency clashes?
+The model generates **one token at a time**, each one informed by everything before it. That's why long responses feel slower — it's not downloading text, it's computing each word sequentially. There's no shortcut there.
 
-* **Build your own products.**
-    Try building software or tools that you will use in your everyday life, like your own to-do list application. This allows you to avoid bugs and test the product vigorously, putting you in the shoes of mass producers who cater to the needs of millions.
+---
 
-* **Create proper documentation.**
-    Documentation is the most useful reference material for a project. Developers must ensure they provide proper examples and demonstrations.
+## Decoding the pricing page
+
+When you open any LLM provider's pricing page, you'll see three main terms thrown around:
+
+| Term | What it means |
+|---|---|
+| **Input tokens** | Tokens in your message / prompt |
+| **Output tokens** | Tokens the model generates in response |
+| **Context tokens** | The full window — input + output + conversation history |
+
+Here's roughly what that costs across a few popular models today:
+
+| Model | Input (per 1M tokens) | Output (per 1M tokens) |
+|---|---|---|
+| Claude Sonnet 4 | $3.00 | $15.00 |
+| GPT-4o | $2.50 | $10.00 |
+| Gemini 1.5 Pro | $1.25 | $5.00 |
+
+Notice a pattern? **Output always costs more** — often 4–5× more. This is because input tokens can be processed in parallel and even cached between requests, but output tokens are generated one by one. You're essentially paying for the model's "thinking time."
+
+---
+
+## Context: the hidden cost
+
+The context window is how much the model can "see" at once. If you're building a chatbot that keeps conversation history, every message in that history gets sent back to the model on each request — and charged as input tokens.
+
+```
+  Turn 1:   [system prompt] + [user msg 1]           → ~500 tokens
+  Turn 2:   [system prompt] + [user msg 1] + [bot reply 1] + [user msg 2]
+                                                      → ~900 tokens
+  Turn 10:  everything above + ...                   → costs add up fast
+```
+
+Some providers offer **cached input pricing** (usually ~80% cheaper) for repeated prefixes like system prompts. Worth using if you're building something real.
+
+---
+
+## Quick sanity check
+
+Say you're building a simple app — users ask questions, the model answers. Rough estimate:
+
+```
+  System prompt:   ~300 tokens
+  User message:    ~100 tokens
+  Model response:  ~400 tokens
+
+  Per request:     400 input + 400 output
+  At Claude rates: 0.0004M × $3 + 0.0004M × $15 = ~$0.0072
+
+  At 10,000 requests/month: ~$72
+```
+
+Not ruinous. But a poorly written prompt that's 2,000 tokens instead of 300? That scales.
+
+---
+
+Tokens are a genuinely elegant abstraction — they're what let the same model handle English, code, JSON, and the occasional dramatic monologue with equal indifference. Understanding them won't make you a better engineer overnight, but it will stop you from being surprised by your API bill.

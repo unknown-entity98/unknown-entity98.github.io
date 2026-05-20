@@ -6,6 +6,8 @@ tags: [open-source, software-engineering, career]
 category: productivity
 ---
 
+*Wherein we learn that "free as in freedom" and "free as in free pizza" are very different things — and one of them requires a lot more GitHub PRs.*
+
 ![Logo of the Open Source Initiative](/assets/images/open_souce_logo.jpg)
 
 Logo courtesy: [https://opensource.org/](https://opensource.org/)

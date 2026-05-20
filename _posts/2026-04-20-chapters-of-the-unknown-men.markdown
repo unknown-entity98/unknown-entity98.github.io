@@ -6,6 +6,8 @@ tags: [film-review, cinema, dhurandhar]
 category: journalism
 ---
 
+*A review of a spy thriller. No spoilers. Mostly.*
+
 I recently had the chance to write for [Radio Monash](https://www.radiomonash.online/) — a piece on *Dhurandhar*, the Netflix spy-action thriller directed by Aditya Dhar.
 
 The film follows Hamza Ali Mazari through a chapter-based narrative of quiet patriotism, sacrifice, and political intrigue. It's a story about the "masked men" who serve without recognition — and the film captures that beautifully through its cinematography, music, and storytelling structure.
