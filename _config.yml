@@ -10,6 +10,8 @@ description: >
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://unknown-entity98.github.io" # the base hostname & protocol for your site
 
+timezone: Australia/Sydney # match post dates to author's local time, not UTC
+
 author:
   fullname: Sameer
   googleplus: https://www.google.com/+SameerNavuduri
