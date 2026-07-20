@@ -160,6 +160,8 @@ Ofc, then you increase its capacity too, as this struct has been updated.
 
 Now how do I add the variable...? I thought it was `chunk[sizeof(chunk)]`, being the big brain Python programmer I am. Boy I was so wrong 😂. My dumb brain forgot about the `size` & `capacity` variables that I had written earlier. All I had to do was call `arr->chunk[size]`. My mind went :WA DA HELLL:
 
+![WA DA HELLL](/assets/images/wa_da_hell.jpg)
+
 So I went ahead and added `strdup(chunk)` to my array, and I finally increased its size.
 
 I thought I was done with the code, only to realize there was a `free_array()` function left. Although not as hard, it made me remember something fundamental. Let me give you a database analogy: In your database, you have two main tables, and they link to 5 other children tables. Now for some reason, you decide that its a waste of memory and want to clear all tables. You just say - DELETE MY MAIN TABLES. But it doesn't work.... why? You start by clearing the children table first, then you clear the main tables. That is when you can successfully clear all the tables.
