@@ -240,7 +240,7 @@ This led me to learn something important gng:
 
 This ate away my brain for a while. Now that I look at all this, I realize something fundamental. You need to be patient. Learning is like staying in a relationship and learning to love somebody. It requires patience and effort. No one can master something in 1 day. But you can certainly take it one step at a time. 
 
-I managed to finish a rough v1 of my chunker. You can find it in commit _d269e45_. Although not at its best, it certainly works and prints the chunk array for ya.
+I managed to finish a rough v1 of my chunker. You can find my [chunker here](https://github.com/unknown-entity98/c-fundamentals/blob/main/chunker.c). Although not at its best, it certainly works and prints the chunk array for ya.
 
 Try doing something that wrecks your mind. That forces you to sit down and meditate on it.
 
