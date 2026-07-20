@@ -9,7 +9,7 @@ blurb: 'POV: you started out as a Python dev and "tried C" only to realize how m
 
 *'POV: you started out as a Python dev and "tried C" only to realize how much of a spoonfed spoilt brat you are :sed: '*
 
-Although we were forced to write C programs in high school, it was in college when we were really introduced to programming .feat _Python_. It is easy to learn and implement, YES. Python gives you an amazing illustration & visual of how things work. It is a great beginner-friendly tool to step foot into the daunting world of computers. To go deep into this ocean, is altogether another matter. Help me help you kill your time with my rant about my learning and unawareness.
+Although we were forced to write C programs in high school, it was in college when we were really introduced to programming (feat. _Python_). It is easy to learn and implement, YES. Python gives you an amazing illustration & visual of how things work. It is a great beginner-friendly tool to step foot into the daunting world of computers. To go deep into this ocean, is altogether another matter. Help me help you kill your time with my rant about my learning and unawareness.
 
 
 ---
@@ -24,7 +24,7 @@ Someone once told me:
 It struck me in the most crazy fashion. To believe that you are at the pinnacle is like imagining you are "invincible under the sun", as Musashi states in the manga series of _Vagabond_. The story starts with a young Shinmen Takezo who is wild and unruly, who sets out and fights relentlessly to conquer the world. He is willing to go to any lengths to become the strongest man standing. He gets into a lot of trouble, exiled by his own villagers and deemed a criminal. Manhunts are organized to kill him and somehow he survives. Then he uses this chance to travel to other cities and fight those stronger than him. It is then, he truly sees how farther he has to go, and goes on a lifelong quest to understanding himself, his motivation and confront his inner demons.
 
 
-It was so easy I always studied and wrote code by myself. "Ez" is what I thought. "I'm a cool dev. I can do anything. I type fast. I should find it easy" - is precisely what I kept believing, until I tried doing DSA in Java in undergrad. Now, don't get wrong: I'm still confident in my Java Skills. I've built applets and a CPU emulator. I scored a B+ in my Java and DSA courses. It led to me to believe that I could easily pull off the same with C, for practice and get started with heavier ML library implementations soon enough. Maybe Java tests your patience and memory a little but it doesn't do anything that Python hasn't done before. 
+It was always so easy — I just studied and wrote code by myself. "Ez" is what I thought. "I'm a cool dev. I can do anything. I type fast. I should find it easy" - is precisely what I kept believing, until I tried doing DSA in Java in undergrad. Now, don't get wrong: I'm still confident in my Java Skills. I've built applets and a CPU emulator. I scored a B+ in my Java and DSA courses. It led to me to believe that I could easily pull off the same with C, for practice and get started with heavier ML library implementations soon enough. Maybe Java tests your patience and memory a little but it doesn't do anything that Python hasn't done before. 
 
 Recently, I had built a [FastAPI RAG chatbot](https://github.com/unknown-entity98/agentic-rag-api). It led me to go from normal tokenizing to implementing sentence chunking with sufficient overlap and enhance the accuracy of the answers. As creating a chunker in Python was a walk in the park, I decided I would build one in C...
 
@@ -121,7 +121,7 @@ ChunkArray *create_array(int initial_capacity){
 ```
 ❌❌ WRONG!!!!!
 
-The errors rung my doorbell like the people coming to my house for a party. It was so wrong. I had forgot about initializing the `size` variable. My use of `malloc` was so horrid. That was when I realized: declare `chunk` as a pointer, then do `malloc( <number of elements> * <size of the data type>)`. THIS is the real fundamentals I needed to be comfortable with. And this is so beginner, I feel like kicking myself in the stomach. 
+The errors rung my doorbell like the people coming to my house for a party. It was so wrong. I had forgot about initializing the `size` variable. My use of `malloc` was so horrid. That was when I realized: declare `chunk` as a pointer, then do `malloc( <number of elements> * <size of the data type>)`. THIS is the real fundamentals I needed to be comfortable with. And this is so beginner, past-me is somewhere wincing. But present-me finally gets it, and that felt stupidly good.
 
 The corrected code looked like this:
 ```
@@ -167,7 +167,7 @@ I thought I was done with the code, only to realize there was a `free_array()` f
 
 Now similarly, my job was to go through my array of pointers, empty the slot that each of these pointers addressed, AND THEN remove the pointers themselves. Had I removed the pointers instead of clearing their memory and detaching them, I would have been left with used but unreferenced memory. This is another key perspective that C brings to you: _garbage collection_. You clean up your own mess.
 
-Thankfully, this did not make break my head like the other two:
+Thankfully, this didn't break my head like the other two:
 ```
 void free_array(ChunkArray *arr){
     for(int i =  0;i < arr->size;i++){
@@ -210,7 +210,7 @@ int main(){
     fclose(f);
 
     for(int i = 0; i < arr->size; i++){
-        printf(%s\n",arr->chunk[i]);
+        printf("%s\n", arr->chunk[i]);
     }
 
     free_array(*arr);  
