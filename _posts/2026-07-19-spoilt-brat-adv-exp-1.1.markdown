@@ -9,7 +9,7 @@ blurb: 'POV: you started out as a Python dev and "tried C" only to realize how m
 
 *'POV: you started out as a Python dev and "tried C" only to realize how much of a spoonfed spoilt brat you are :sed: '*
 
-Although we were forced to write C programs in high school, it was in college when we were really introduced to programming .feat _Python_. It is easy to learn and implement, YES. Python gives you an amazing illustration & visual of how things work. It is a great beginner-frtiendly tool to step foot into the dauting world of computers. To go deep into this ocean, is altogether another matter. Help me help you kill your time with my rant about my learning and unawareness.
+Although we were forced to write C programs in high school, it was in college when we were really introduced to programming .feat _Python_. It is easy to learn and implement, YES. Python gives you an amazing illustration & visual of how things work. It is a great beginner-friendly tool to step foot into the daunting world of computers. To go deep into this ocean, is altogether another matter. Help me help you kill your time with my rant about my learning and unawareness.
 
 
 ---
@@ -52,7 +52,7 @@ In C, reading the file was no biggie. But creating an array was a challenge. As 
 
 2. define a function to invoke the creation and memory allocation of this array
 
-3. define our own *append()* functiono to do the same thing that is done by Python's inbuilt method.
+3. define our own *append()* function to do the same thing that is done by Python's inbuilt method.
 
 4. take care of extending its memory when filled
 
@@ -109,7 +109,7 @@ typedef struct{
 
 However, when I was defining the `create_array()` method, my mind was boggled. Although it took in only 1 parameter - `initial_capacity`, it needed me to allocate memory, and ensure that the pointer pointed to the right place. How would I allocate the required memory of this dynamic memory structure?
 
-Afaik, any variable needed declaration first. Then I knew I had to allocate memory to the chunk pointer. Now I was not sure about how to assign space - _should i just give `malloc(arr->capacity)`? should I just declare a chunk var, perform amlloc and then assign it to arr->chunk? What in the world should  I do ?_. This was my first botched attempt.
+Afaik, any variable needed declaration first. Then I knew I had to allocate memory to the chunk pointer. Now I was not sure about how to assign space - _should i just give `malloc(arr->capacity)`? should I just declare a chunk var, perform malloc and then assign it to arr->chunk? What in the world should  I do ?_. This was my first botched attempt.
 ```
 ChunkArray *create_array(int initial_capacity){
     ChunkArray *arr;
@@ -134,7 +134,7 @@ ChunkArray *create_array(int initial_capacity){
 }
 ```
 :Sigh:
-THat was one hurdle out of the way. Now I needed to define two functions to _append_ and _free_ the array.
+That was one hurdle out of the way. Now I needed to define two functions to _append_ and _free_ the array.
 
 ---
 
@@ -162,10 +162,10 @@ Now how do I add the variable...? I thought it was `chunk[sizeof(chunk)]`, being
 
 So I went ahead and added `strdup(chunk)` to my array, and I finally increased its size.
 
-I thought I was done with the code, only to realize there was a `free_array()` function left. Although not as hard, it made me remember something fundamental. Let me give you a database analogy: In your database, you have two main tables, and they link to 5 other children tables. Now for some reason, you decide that its a waste of memory and want to clear all tables. You just say - DELETE MY MAIN TABLES. But it doesn't work.... why? You start by clearing the children table first, then you clear the main tables. That is when you can successfully clear all the tables.
+I thought I was done with the code, only to realize there was a `free_array()` function left. Although not as hard, it made me remember something fundamental. Let me give you a database analogy: In your database, you have two main tables, and they link to 5 other children tables. Now for some reason, you decide that it's a waste of memory and want to clear all tables. You just say - DELETE MY MAIN TABLES. But it doesn't work.... why? You start by clearing the children table first, then you clear the main tables. That is when you can successfully clear all the tables.
 
 
-Now similarly, my job was to go through my array of pointers, empty the slot that each of these pointers addressed, AND THEN remove the pointers themselves. Had I removed the pointers instead of clearing their meomry and detaching them, I would have been left with used but unreferenced memory. This is another key perspective that C brings to you: _garbage collection_. You clean up your own mess.
+Now similarly, my job was to go through my array of pointers, empty the slot that each of these pointers addressed, AND THEN remove the pointers themselves. Had I removed the pointers instead of clearing their memory and detaching them, I would have been left with used but unreferenced memory. This is another key perspective that C brings to you: _garbage collection_. You clean up your own mess.
 
 Thankfully, this did not make break my head like the other two:
 ```
@@ -240,7 +240,7 @@ This led me to learn something important gng:
 
 This ate away my brain for a while. Now that I look at all this, I realize something fundamental. You need to be patient. Learning is like staying in a relationship and learning to love somebody. It requires patience and effort. No one can master something in 1 day. But you can certainly take it one step at a time. 
 
-I managed to finish a rough v1 of my chunker. You can find it in commmit _d269e45_. Although not at its best, it certainly works and prints the chunk array for ya.
+I managed to finish a rough v1 of my chunker. You can find it in commit _d269e45_. Although not at its best, it certainly works and prints the chunk array for ya.
 
 Try doing something that wrecks your mind. That forces you to sit down and meditate on it.
 
